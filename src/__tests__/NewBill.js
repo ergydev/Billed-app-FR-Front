@@ -16,3 +16,5 @@ describe("Given I am connected as an employee", () => {
     })
   })
 })
+
+describe('When I upload a file it need to be an jpg, jpeg or png file')
