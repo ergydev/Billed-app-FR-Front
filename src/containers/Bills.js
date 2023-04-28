@@ -33,7 +33,8 @@ export default class {
       .bills()
       .list()
       .then(snapshot => {
-        const bills = snapshot
+        const bills = snapshot.filter(bill => { return bill.type !== null}) // delete bills with file extension error
+        bills.sort((a, b) => {return new Date(b.date) - new Date(a.date)})
           .map(doc => {
             try {
               return {
